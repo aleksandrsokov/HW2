@@ -1,5 +1,5 @@
 # HW2
- apt update
+apt update
 #Установка пакетов для компиляции
 apt install -y wget curl build-essential libncurses-dev bison flex libssl-dev libelf-dev fakeroot
 #так же пакет для компиляции
@@ -11,9 +11,9 @@ tar -xf linux-6.6.30.tar.xz
 cd linux-6.6.30
 #Копирование конфигурационного файла текущего ядра
 cp -v /boot/config-$(uname -r) .config
-#Просматривает загруженные модули ядра и меняет конфиг так что бы попали только эти модули 
+#Просматривает загруженные модули ядра и меняет конфиг так что бы попали только эти модули
 make localmodconfig
-#Отключение сертификатов в конфгурации 
+#Отключение сертификатов в конфгурации
 scripts/config --disable SYSTEM_TRUSTED_KEYS
 scripts/config --disable SYSTEM_REVOCATION_KEYS
 scripts/config --set-str CONFIG_SYSTEM_TRUSTED_KEYS ""
